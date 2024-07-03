@@ -1,4 +1,9 @@
 {
   // https://nuxt.com/docs/guide/concepts/typescript
-  "extends": "./.nuxt/tsconfig.json"
+  "extends": "./.nuxt/tsconfig.json",
+  "compilerOptions": {
+    "moduleResolution": "Node",
+    "module": "esnext", // 可以是 "es2022", "esnext", "system", "node16", 或 "nodenext"
+    "target": "es2017", // 或更高版本，如 "es2018", "es2019", "es202
+  }
 }
