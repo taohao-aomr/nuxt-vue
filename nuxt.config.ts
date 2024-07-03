@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   app: {
-    // baseURL: '/nuxt-vue/'
+    baseURL: '/nuxt-vue/'
   },
   // https://nuxt.com/docs/api/nuxt-config#srcdir
   srcDir: 'src/',
