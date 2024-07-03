@@ -1,0 +1,1 @@
+import{_ as t,c as o,S as s,a,o as c}from"./CKw10zg1.js";const n={},r=a("h1",null,"这里是默认模板，可以添加在所有页面，也可单独添加",-1);function l(e,_){return c(),o("div",null,[r,s(e.$slots,"default")])}const f=t(n,[["render",l]]);export{f as default};

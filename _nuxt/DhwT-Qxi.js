@@ -1,0 +1,1 @@
+import{_ as e,c as o,o as t,a as s}from"./CKw10zg1.js";const c={},r={class:"footer"},_=s("h1",null,"这里是默认模板 footer",-1),a=[_];function n(f,d){return t(),o("header",r,a)}const h=e(c,[["render",n]]);export{h as default};
