@@ -4,6 +4,7 @@
       <NuxtLayout name="header"/>
       <NuxtLink to="/list">进入列表页</NuxtLink>
       <div>{{ foo }}</div>
+      <div>修改yml</div>
     </div>
   </template>
 <script setup lang="ts">
