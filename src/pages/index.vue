@@ -26,14 +26,14 @@
       <el-table-column prop="createTime" label="创建时间" />
       <el-table-column prop="appointTime" label="预约时间" />
       <el-table-column prop="appointArea" label="预约地点" />
-      <el-table-column label="操作" >
+      <el-table-column label="操作">
         <template #default="{ row }">
           <el-button type="primary" @click="onEdit(row)">编辑</el-button>
         </template>
       </el-table-column>
     </el-table>
 
-    <el-dialog v-model="dialogVisible" :title="title" width="500" >
+    <el-dialog v-model="dialogVisible" :title="title" width="500">
       <el-form :model="form" label-width="auto" style="max-width: 600px">
         <el-form-item label="用户名称">
           <el-input v-model="form.userName" placeholder="请输入用户名称" clearable />
@@ -48,7 +48,8 @@
           <el-input v-model="form.phone" placeholder="请输入用户手机号" clearable />
         </el-form-item>
         <el-form-item label="预约时间">
-          <el-date-picker v-model="form.appointTime" type="datetime" placeholder="请选择到店时间" style="width: 100%" format="YYYY-MM-DD HH:mm:ss" value-format="YYYY-MM-DD HH:mm:ss"  />
+          <el-date-picker v-model="form.appointTime" type="datetime" placeholder="请选择到店时间" style="width: 100%"
+            format="YYYY-MM-DD HH:mm:ss" value-format="YYYY-MM-DD HH:mm:ss" />
         </el-form-item>
         <el-form-item label="预约地点">
           <el-input v-model="form.appointArea" type="textarea" />
@@ -115,19 +116,19 @@ const onDialogSubmit = async () => {
   console.log("submit!");
 
   if (form.id) {
-     await supabase
+    await supabase
       .from('USER_INFO')
-      .update({...form})
+      .update(form)
       .eq('id', form.id)
       .select()
   } else {
     const { id, ...other } = form;
     await supabase
-    .from("USER_INFO")
-    .insert([{...other}])
-    .select();
+      .from("USER_INFO")
+      .insert([{ ...other }])
+      .select();
   }
- 
+
   dialogVisible.value = false;
   Object.assign(form, initFormData)
   getData();
@@ -140,7 +141,7 @@ const getData = async () => {
   tableData.value = data;
 };
 const title = computed(() => {
-    return form.id ? '编辑' : '新增'
+  return form.id ? '编辑' : '新增'
 })
 
 watch(dialogVisible, (newValue: boolean) => {
