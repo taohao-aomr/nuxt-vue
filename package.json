@@ -30,6 +30,7 @@
   "dependencies": {
     "@element-plus/nuxt": "^1.0.9",
     "@pinia/nuxt": "^0.5.1",
+    "@supabase/supabase-js": "^2.44.2",
     "@vueuse/core": "^10.11.0",
     "@vueuse/nuxt": "^10.11.0",
     "element-plus": "^2.7.6",
@@ -41,6 +42,8 @@
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
+    "@nuxt/eslint-config": "^0.3.13",
+    "@nuxtjs/supabase": "^1.2.2",
     "@typescript-eslint/eslint-plugin": "^7.15.0",
     "@typescript-eslint/parser": "^7.15.0",
     "commitizen": "^4.3.0",
