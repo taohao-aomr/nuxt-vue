@@ -2,7 +2,8 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   app: {
-    baseURL: '/nuxt-vue/',
+    baseURL: '/',
+    buildAssetsDir: 'nuxt',
     head: {
       title: "学习 Nuxt",
       charset: "UTF-8",
@@ -26,6 +27,9 @@ export default defineNuxtConfig({
         }
       ]
     }
+  },
+  experimental: {
+      payloadExtraction: false
   },
 
   // https://nuxt.com/docs/api/nuxt-config#srcdir
