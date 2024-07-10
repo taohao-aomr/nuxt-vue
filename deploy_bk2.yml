@@ -43,20 +43,9 @@ jobs:
       - name: Generate Static Site
         run: pnpm generate # 或者其他生成静态站点的命令，具体取决于你的 Nuxt.js 配置 # 或 pnpm docs:build / yarn docs:build / bun run docs:build
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4 # 这个 action 能将你的构建产物，作为新增内容提交到 gh-pages 分支
         with:
-          path: .output/public
+          folder: .output/public # Nuxt3 生成的静态文件夹名称
 
-  # 部署工作
-  deploy:
-    environment: # 部署环境
-      name: github-pages # 部署到 GitHub Pages
-      url: ${{ steps.deployment.outputs.page_url }} # 部署后的 URL
-    needs: build # 郈接到构建工作
-    runs-on: ubuntu-latest # 运行环境
-    name: Deploy # 工作名称
-    steps: # 步骤
-      - name: Deploy to GitHub Pages # 部署到 GitHub Pages
-        id: deployment # 步骤 ID
-        uses: actions/deploy-pages@v4 # 使用的 action
+
