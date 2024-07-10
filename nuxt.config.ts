@@ -4,7 +4,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   app: {
-    baseURL: '/',
+    baseURL: '/nuxt-vue/',
     buildAssetsDir: 'nuxt',
     head: {
       title: "学习 Nuxt",
