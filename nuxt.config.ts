@@ -47,6 +47,8 @@ export default defineNuxtConfig({
 
   // 自定义配置
   supabase: {
+    url: process.env.SUPABASE_URL,
+    key: process.env.SUPABASE_KEY,
     redirect: false // https://supabase.nuxtjs.org/get-started#redirect
   },
 
