@@ -1,4 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+// import { defineNuxtConfig } from 'nuxt/config'
+
 export default defineNuxtConfig({
   devtools: { enabled: true },
   app: {
@@ -28,6 +30,7 @@ export default defineNuxtConfig({
       ]
     }
   },
+
   experimental: {
       payloadExtraction: false
   },
@@ -42,6 +45,7 @@ export default defineNuxtConfig({
     '@element-plus/nuxt',
     '@nuxtjs/supabase'
   ],
+
   // 自定义配置
   supabase: {
     redirect: false // https://supabase.nuxtjs.org/get-started#redirect
@@ -57,5 +61,5 @@ export default defineNuxtConfig({
     }
   },
 
-  compatibilityDate: '2024-07-03'
+  compatibilityDate: '2024-07-10',
 })

@@ -4,6 +4,8 @@
     <NuxtLayout name="header" />
     <NuxtLink to="/list">进入列表页</NuxtLink>
     <br />
+    <NuxtLink to="/ms">进入MS</NuxtLink>
+    <br />
     <br />
     <el-form :inline="true" :model="formInline" class="demo-form-inline">
       <el-form-item label="用户名称">
@@ -69,12 +71,26 @@ import { reactive, ref, computed, watch } from "vue";
 
 const supabase = useSupabaseClient();
 
+// interface INIT_FORM  {
+//   userName: string,
+//   phone: string
+// }
+
 const initFormInline = {
   userName: "",
   phone: "",
 }
 const formInline = reactive(initFormInline);
 const dialogVisible = ref(false);
+
+// interface INIT_FORM_DATA {
+//   id: string,
+//   userName: string,
+//   phone: string,
+//   sex: string,
+//   appointTime: string,
+//   appointArea: string,
+// }
 
 const initFormData = {
   id: '',
