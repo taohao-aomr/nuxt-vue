@@ -1,7 +1,7 @@
 <template>
   <el-footer>
     <el-divider style="margin: 12px 0">
-      <NuxtImg src="/logo.png" alt="logo" class="w-5" />
+      <img src="../../../public/logo.png" alt="logo" class="w-5" />
     </el-divider>
     <div class="flex justify-between items-center max-sm:flex-col">
       <div class="flex items-center gap-0.5 max-sm:flex-col">
@@ -15,7 +15,7 @@
           size="small"
         >
           <div class="flex items-center gap-2">
-            <NuxtImg :src="`/${icon}`" :alt="tip" class="w-4" />
+            <img :src="`/${icon}`" :alt="tip" class="w-4" />
             {{ tip }}
           </div>
         </el-button>
