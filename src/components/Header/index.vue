@@ -7,7 +7,7 @@
     <NuxtLink to="/">
       <div class="flex gap-4 items-center">
         <!-- logo -->
-        <NuxtImg src="/logo.png" alt="logo" class="w-8 h-8" />
+        <img src="../../../public/logo.png" alt="logo" class="w-8 h-8" />
       </div>
     </NuxtLink>
     <!-- 右侧 社交图标 -->
