@@ -1,7 +1,18 @@
 <template>
-    <div>
-      <h1>这里是默认模板，可以添加在所有页面，也可单独添加</h1>
-      <slot />
-    </div>
-  </template>
-  
+  <el-config-provider :locale="zhCn">
+    <el-container direction="vertical">
+      <!-- header -->
+      <Header />
+      <!-- main -->
+      <el-main style="min-height: calc(100vh - 8rem)">
+        <slot />
+      </el-main>
+      <!-- footer -->
+      <Footer />
+    </el-container>
+  </el-config-provider>
+</template>
+<script lang="ts" setup>
+import zhCn from 'element-plus/dist/locale/zh-cn.mjs';
+
+</script>

@@ -1,4 +1,5 @@
 module.exports = {
+    root: true,
     parser: 'vue-eslint-parser',
 
     parserOptions: {
@@ -16,6 +17,7 @@ module.exports = {
         'prettier',
         'plugin:prettier/recommended'
     ],
+    plugins: ['vue'],
 
     rules: {
         camelcase: 2, // 驼峰

@@ -1,16 +1,24 @@
 import { defineStore } from 'pinia'
+import { reactive } from 'vue'
+interface USER_INFO {
+  userName: String,
+  id: Number,
+  sex: String
+}
 
-const USER_INFO = {
+const USER_INFO: USER_INFO = {
   userName: '浩师傅',
   id: 1,
   sex: '男',
 }
 
-export const useUserStore = defineStore('userInfo', () => {
+const useUserStore = defineStore('userInfo', () => {
 
-  const userInfo = reactive(USER_INFO)
+  const userInfo = reactive<USER_INFO>(USER_INFO)
 
   return {
     userInfo,
   }
 })
+
+export default useUserStore
