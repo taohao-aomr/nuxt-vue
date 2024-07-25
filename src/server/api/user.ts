@@ -1,6 +1,6 @@
 
 
-export const getUser = async () => {
+export const getUser: Object = async () => {
   return {
     hello: 'world'
   }

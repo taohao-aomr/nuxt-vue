@@ -7,42 +7,24 @@ export default defineNuxtConfig({
   //     payloadExtraction: false
   // },
   app: {
-    baseURL: '/nuxt-vue/',
+    baseURL: '/',
     // buildAssetsDir: 'nuxt',
-    head: {
-      title: "学习 Nuxt",
-      charset: "UTF-8",
-      viewport:
-        "width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=no",
-      meta: [
-        {
-          name: "keywords",
-          content: "Nuxt 官网",
-        }
-      ],
-      link: [
-        {
-          rel: "shortcut icon",
-          href: "favicon.ico",
-        },
-      ],
-      script: [
-        {
-          src: "https://nuxt.com",
-        }
-      ]
-    }
+    pageTransition: { name: 'page', mode: 'out-in' }
   },
 
   // https://nuxt.com/docs/api/nuxt-config#srcdir
   srcDir: 'src/',
 
   modules: [
-    // ...
+    '@nuxt/image',
     '@pinia/nuxt',
     '@vueuse/nuxt',
     '@element-plus/nuxt',
-    '@nuxtjs/supabase'
+    '@nuxtjs/supabase',
+    '@nuxtjs/color-mode',
+    '@nuxt/icon',
+    'nuxt-gtag',
+    "@nuxtjs/tailwindcss"
   ],
 
   // 自定义配置
@@ -52,15 +34,20 @@ export default defineNuxtConfig({
     redirect: false // https://supabase.nuxtjs.org/get-started#redirect
   },
 
-  vite: {
-    css: {
-      preprocessorOptions: {
-        scss: {
-          additionalData: '@import "@/assets/styles/default.scss";'
-        }
-      }
-    }
+  css: ['element-plus/theme-chalk/dark/css-vars.css', '~/assets/scss/main.scss'],
+  colorMode: {
+    classSuffix: ''
   },
+  // colorMode: {
+  //   preference: 'system', // default value of $colorMode.preference
+  //   fallback: 'light', // fallback value if not system preference found
+  //   hid: 'nuxt-color-mode-script',
+  //   globalName: '__NUXT_COLOR_MODE__',
+  //   componentName: 'ColorScheme',
+  //   classPrefix: '',
+  //   classSuffix: '-mode',
+  //   storageKey: 'nuxt-color-mode'
+  // },
 
   compatibilityDate: '2024-07-10',
 })
