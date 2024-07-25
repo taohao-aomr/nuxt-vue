@@ -17,7 +17,6 @@ export default defineNuxtConfig({
 
   modules: [
     '@nuxt/image',
-    'nuxt-icons',
     '@pinia/nuxt',
     '@vueuse/nuxt',
     '@element-plus/nuxt',
