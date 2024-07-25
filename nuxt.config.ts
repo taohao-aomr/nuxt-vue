@@ -25,6 +25,7 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@nuxt/icon',
     'nuxt-gtag',
+    "@nuxtjs/tailwindcss"
   ],
 
   // 自定义配置
