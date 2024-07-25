@@ -7,7 +7,8 @@ export default defineNuxtConfig({
   //     payloadExtraction: false
   // },
   app: {
-    baseURL: '/nuxt-vue/',
+    baseURL: '/',
+    // buildAssetsDir: 'nuxt',
     pageTransition: { name: 'page', mode: 'out-in' }
   },
 
