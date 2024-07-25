@@ -7,7 +7,8 @@ export default defineNuxtConfig({
   //     payloadExtraction: false
   // },
   app: {
-    baseURL: '/nuxt-vue/',
+    baseURL: '/',
+    // buildAssetsDir: 'nuxt',
     pageTransition: { name: 'page', mode: 'out-in' }
   },
 
@@ -16,7 +17,6 @@ export default defineNuxtConfig({
 
   modules: [
     '@nuxt/image',
-    'nuxt-icons',
     '@pinia/nuxt',
     '@vueuse/nuxt',
     '@element-plus/nuxt',
@@ -24,6 +24,7 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@nuxt/icon',
     'nuxt-gtag',
+    "@nuxtjs/tailwindcss"
   ],
 
   // 自定义配置
