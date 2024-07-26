@@ -35,7 +35,7 @@
   </el-footer>
 </template>
 <script setup lang="ts">
-import { FooterSocial, FooterRecord } from '@/const'
+import { FooterSocial, FooterRecord } from '../../const'
 </script>
 <style scoped>
 :deep(.el-button + .el-button) {

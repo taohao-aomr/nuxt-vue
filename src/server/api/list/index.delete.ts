@@ -16,7 +16,7 @@ export default defineEventHandler(async (event): Promise<Response<WebsiteList[]>
   }
 
   // 删除数据
-  const { error } = await client.from('ds_websites').delete().eq('id', id)
+  const { error } = await client.from('USER_INFO').delete().eq('id', id)
 
   // 判断请求结果
   if (error) {
