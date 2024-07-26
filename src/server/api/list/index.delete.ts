@@ -1,12 +1,12 @@
 
-import type { Response, WebsiteEdit, WebsiteList } from '~/types'
+import type { Response } from '~/types'
 import { serverSupabaseClient } from '#supabase/server'
 import { RESPONSE_STATUS_CODE } from '~/enum'
 
-export default defineEventHandler(async (event): Promise<Response<WebsiteList[]>> => {
-  const client = await serverSupabaseClient<WebsiteList>(event)
+export default defineEventHandler(async (event): Promise<Response> => {
+  const client = await serverSupabaseClient(event)
   // 得到请求体
-  const { id }: WebsiteEdit = await readBody(event)
+  const { id } = await readBody(event)
 
   if (!id) {
     return {

@@ -1,5 +1,5 @@
 
-import type { Response, PageResponse, WebsiteList, WebsiteParams } from '~/types'
+import type { Response, PageResponse } from '~/types'
 import { serverSupabaseClient } from '#supabase/server'
 import { RESPONSE_STATUS_CODE } from '~/enum'
 
@@ -7,7 +7,7 @@ export default defineEventHandler(async (event): Promise<Response<PageResponse>>
   const client = await serverSupabaseClient(event)
   // 获取请求参数
   const { current, pageSize, userName = '', phone = '' } = getQuery(event)
-  
+
   // 判断参数
   if (!current || !pageSize) {
     return { code: RESPONSE_STATUS_CODE.FAIL, msg: '参数错误' }
