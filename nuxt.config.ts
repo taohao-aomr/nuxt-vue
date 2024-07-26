@@ -3,12 +3,13 @@
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  // experimental: {
-  //     payloadExtraction: false
-  // },
+  experimental: {
+      payloadExtraction: false
+  },
   app: {
-    baseURL: '/',
-    // buildAssetsDir: 'nuxt',
+    // baseURL: '/',
+    baseURL: '/nuxt-vue/',
+    buildAssetsDir: 'nuxt',
     pageTransition: { name: 'page', mode: 'out-in' }
   },
 

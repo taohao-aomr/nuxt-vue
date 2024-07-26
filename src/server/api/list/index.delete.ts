@@ -1,12 +1,12 @@
 
-import type { Response, WebsiteEdit, WebsiteList } from '~/types'
+import type { Response } from '~/types'
 import { serverSupabaseClient } from '#supabase/server'
 import { RESPONSE_STATUS_CODE } from '~/enum'
 
-export default defineEventHandler(async (event): Promise<Response<WebsiteList[]>> => {
-  const client = await serverSupabaseClient<WebsiteList>(event)
+export default defineEventHandler(async (event): Promise<Response> => {
+  const client = await serverSupabaseClient(event)
   // 得到请求体
-  const { id }: WebsiteEdit = await readBody(event)
+  const { id } = await readBody(event)
 
   if (!id) {
     return {
@@ -16,7 +16,7 @@ export default defineEventHandler(async (event): Promise<Response<WebsiteList[]>
   }
 
   // 删除数据
-  const { error } = await client.from('ds_websites').delete().eq('id', id)
+  const { error } = await client.from('USER_INFO').delete().eq('id', id)
 
   // 判断请求结果
   if (error) {

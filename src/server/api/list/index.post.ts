@@ -1,17 +1,17 @@
 
-import type { Response, WebsiteEdit, WebsiteList } from '~/types'
+import type { Response,  } from '~/types'
 import { serverSupabaseClient, serverSupabaseUser } from '#supabase/server'
 import { RESPONSE_STATUS_CODE } from '~/enum'
 
-export default defineEventHandler(async (event): Promise<Response<WebsiteList[]>> => {
-  const client = await serverSupabaseClient<WebsiteList>(event)
+export default defineEventHandler(async (event): Promise<Response> => {
+  const client = await serverSupabaseClient(event)
   const user = await serverSupabaseUser(event)
   // 得到请求体
-  const body: WebsiteEdit = await readBody(event)
+  const body = await readBody(event)
 
   // 插入数据
   const { data, error } = await client
-    .from('ds_websites')
+    .from('USER_INFO')
     .insert({ ...body, email: user?.email })
     .select()
 
